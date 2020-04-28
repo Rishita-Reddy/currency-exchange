@@ -41,7 +41,7 @@ pipeline {
 			        dockerImage.push('latest');	
 			}
 	         }
-		}
+	}}
 	stage('Test') {
 		steps{	
 			sh 'mvn test'
