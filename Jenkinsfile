@@ -25,7 +25,23 @@ pipeline {
 			sh 'mvn clean compile	'
 		}
 	}
-
+	stage ('Build Docker Image')
+		{
+			steps{
+				script{
+					dockerImage=docker.build("rishitareddy2811/currency-exchange:${env.BUILD_TAG});
+				}
+			}
+		}
+	stage ('Push Docker Image')
+	{steps{
+		script{
+		docker.withRegistry('','dockerhub')	
+			{	dockerImage.push();
+			        dockerImage.push('latest');	
+			}
+	         }
+		}
 	stage('Test') {
 		steps{	
 			sh 'mvn test'
