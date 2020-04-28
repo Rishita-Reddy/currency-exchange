@@ -29,7 +29,7 @@ pipeline {
 		{
 			steps{
 				script{
-					dockerImage=docker.build("rishitareddy2811/currency-exchange:${env.BUILD_TAG});
+					dockerImage=docker.build("rishitareddy2811/currency-exchange:${env.BUILD_TAG}");
 				}
 			}
 		}
