@@ -50,7 +50,7 @@ pipeline {
 			}
 	         }
 	}}
-	stage('Test') {
+	stage('Maven Test') {
 		steps{	
 			sh 'mvn test'
 		}
