@@ -40,7 +40,7 @@ pipeline {
 					dockerImage=docker.build("rishitareddy2811/currency-exchange:${env.BUILD_TAG}");
 				}
 			}
-		}
+		}	
 	stage ('Push Docker Image')
 	{steps{
 		script{
@@ -60,7 +60,7 @@ pipeline {
 	post
 	{
 		success{
-			echo "Buils was successful"
+			echo "Build was successful"
 		}
 		always{
 			echo "finished somehow"
