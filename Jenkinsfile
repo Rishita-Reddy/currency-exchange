@@ -20,11 +20,19 @@ pipeline {
 		echo "BUILD_URL- $env.BUILD_URL"
 		}
 	}
-	stage('Compile'){
-		steps{
-			sh 'mvn install'
-		}
-	}
+  stage('Test') {
+            steps { 
+                echo "Test"
+            }
+        }
+		stage('Package') {
+            steps { 
+               echo "Started creating jar file"
+			   sh "mvn clean install -DskipTests"
+			   echo "Completed creating jar file"
+            }
+        }
+
 	stage ('Build Docker Image')
 		{
 			steps{
