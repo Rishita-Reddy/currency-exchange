@@ -22,7 +22,7 @@ pipeline {
 	}
 	stage('Compile'){
 		steps{
-			sh 'mvn clean compile	'
+			sh 'mvn install'
 		}
 	}
 	stage ('Build Docker Image')
