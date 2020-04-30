@@ -1,5 +1,6 @@
 pipeline {
-	agent any
+	//agent any
+	 agent { dockerfile true }
 	//agent{ docker {image 'maven:3.6.3'}}
 		environment{
 			dockerHome=  tool 'myDocker'
