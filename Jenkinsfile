@@ -25,6 +25,7 @@ pipeline {
             steps { 
                echo "Started creating jar file"
 			   sh "mvn clean install -DskipTests"
+			   sh 'rm -r ./temp'
 			   echo "Completed creating jar file"
             }
         }
