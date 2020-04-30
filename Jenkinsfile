@@ -21,11 +21,6 @@ pipeline {
 		echo "BUILD_URL- $env.BUILD_URL"
 		}
 	}
-  stage('Test') {
-            steps { 
-                echo "Test"
-            }
-        }
 		stage('Package') {
             steps { 
                echo "Started creating jar file"
@@ -51,6 +46,20 @@ pipeline {
 			}
 	         }
 	}}
+
+	stage ('Helm')
+{
+	steps{
+		script{
+			sh 'git clone https://github.com/Rishita-Reddy/currency-exchange/ ./temp'
+			sh ' cd temp '
+			sh ' gcloud container clusters get-credentials jenkins-cd --zone us-east1-d --project jenkins-poc-275611' 
+			sh ' helm install ./currency-chart --generate-name'
+		}
+	}
+}
+
+
 	stage('Maven Test') {
 		steps{	
 			sh 'mvn test'
