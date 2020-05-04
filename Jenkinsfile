@@ -25,7 +25,6 @@ pipeline {
             steps { 
                echo "Started creating jar file"
 			   sh "mvn clean install -DskipTests"
-			   sh 'rm -r ./temp'
 			   echo "Completed creating jar file"
             }
         }
@@ -48,8 +47,8 @@ pipeline {
 	         }
 	}}
 
-	stage ('Helm')
-{
+	/*stage ('Helm')
+	{
 	steps{
 		script{
 			sh 'git clone https://github.com/Rishita-Reddy/currency-exchange/ ./temp'
@@ -58,7 +57,7 @@ pipeline {
 			sh ' helm install ./currency-chart --generate-name'
 		}
 	}
-}
+}*/
 
 
 	stage('Maven Test') {
