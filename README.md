@@ -156,3 +156,11 @@ As we can see from the above image, **build_steps** and **unit_tests** are runni
 
 
    
+   
+```
+publish_config:
+  docker:
+    {dev}
+  helm:
+    {dev}
+ ```
