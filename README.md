@@ -93,6 +93,23 @@ For examples see **test_steps** in sample [build-info.yaml](../resources/build-i
     - junits/junit.xml # Files will be placed in gs://$ARTIFACT_BUCKET/$JOB_NAME/$BUILD_NUMBER/archive/artifacts/targets/*.jar
   junit: resources/junit.xml <Location of the junit files. This is how tests are reported> (required)
 ```
+sonar 
+```yaml
+sonar_conf:
+  - sonar.projectKey: project key value
+    sonar.projectName: name of the project
+    sonar.projectVersion: version of the project 
+    sonar.sources: path of the source code folder
+    sonar.language: programming language of the project
+    sonar.java.binaries: path to the binaries (for java)
+    sonar.sourceEncoding : UTF-8
+    sonar.web.host: URL to the sonarqube
+    sonar.web.port: specify port
+    sonar.login: token to login into sonarqube
+    ```
+
+
+
 
 ### docker_build
 For examples see **docker_build** in sample [build-info.yaml](../resources/build-info.yaml)
