@@ -148,6 +148,26 @@ For examples see **helm_build** in sample [build-info.yaml](../resources/build-i
 
 When this step is executed the helm chart will be uploaded to `gs://$ARTIFACT_BUCKET/$JOB_NAME/$BUILD_NUMBER/archive/helm/`
 
+
+deploy_config
+```yaml
+deploy_config:
+  deploy: true
+  cd_repo_dev: "git@github.gwd.broadcom.net:dockcpdev/gtso-helm-helloworld.git"
+  cd_repo_verify: "git@github.gwd.broadcom.net:dockcp/gtso-helm-helloworld.git"
+  cd_git_credentials: "sg037737_GitOps_SSH"
+  cd_git_user:
+    name: "Jenkins Worker"
+    email: "chintan.vyas@broadcom.com"
+  environments:
+    dev:
+      gke: us-west1-dev
+    #feature-2:
+    #  gke: us-east1-f2
+    feature-cv-15:
+        gke: gdu1
+ ```       
+
 ## Flow
 The following image describes the flow of stages in the pipeline.
 ![build-info-flow](images/build-info-flow.png)
