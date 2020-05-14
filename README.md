@@ -157,7 +157,7 @@ As we can see from the above image, **build_steps** and **unit_tests** are runni
 
    
    
-```
+```yaml
 publish_config:
   docker:
     {dev}
