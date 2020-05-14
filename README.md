@@ -168,6 +168,15 @@ deploy_config:
         gke: gdu1
  ```       
 
+image_scan
+```yaml
+  image_scan:
+    skip_image_scan: "yes"
+    severity_threshold: "warn"
+    ignore_failures: "yes"
+ ```   
+
+
 ## Flow
 The following image describes the flow of stages in the pipeline.
 ![build-info-flow](images/build-info-flow.png)
